@@ -14,4 +14,14 @@ class Station extends Model
         'latitude',
         'longitude',
     ];
+
+    public function segmentAsStart()
+    {
+        return $this->belongsToMany(Segment::class, 'start_station_id');
+    }
+    
+    public function segmentAsEnd()
+    {
+        return $this->belongsToMany(Station::class, 'end_station_id');
+    }
 }
