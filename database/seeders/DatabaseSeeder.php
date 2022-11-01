@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             UserSeeder::class,
             StationSeeder::class,
+            Line100RouteSeeder::class,
         ]);
     }
 }
