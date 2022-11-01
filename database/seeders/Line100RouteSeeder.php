@@ -21,6 +21,7 @@ class Line100RouteSeeder extends Seeder
             'short_name' => '100',
             'direction' => 'east',
         ]);
+        
         $line100WestBound = TransitRoute::factory()->create([
             'route_name' => '100 West',
             'short_name' => '100',
