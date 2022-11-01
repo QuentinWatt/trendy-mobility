@@ -15,13 +15,13 @@ class Station extends Model
         'longitude',
     ];
 
-    public function segmentAsStart()
+    public function departures()
     {
-        return $this->belongsToMany(Segment::class, 'start_station_id');
+        return $this->belongsToMany(Segment::class, 'depart_station_id');
     }
     
-    public function segmentAsEnd()
+    public function arrivals()
     {
-        return $this->belongsToMany(Station::class, 'end_station_id');
+        return $this->belongsToMany(Station::class, 'arrival_station_id');
     }
 }

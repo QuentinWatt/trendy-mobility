@@ -4,7 +4,6 @@ namespace Database\Seeders;
 
 use App\Models\Station;
 use Illuminate\Database\Seeder;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class StationSeeder extends Seeder
 {
@@ -49,11 +48,7 @@ class StationSeeder extends Seeder
         ];
 
         collect($stations)->each(function($station){
-            Station::factory()->create([
-                'name' => $station['name'],
-                'latitude' => $station['latitude'],
-                'longitude' => $station['longitude'],
-            ]);
+            Station::factory()->create($station);
         });
     }
 }

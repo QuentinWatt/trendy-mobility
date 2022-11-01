@@ -13,16 +13,22 @@ class Segment extends Model
     protected $fillable = [
         'distance',
         'estimated_travel_time',
-        'start_station_id',
-        'end_station_id',
+        'depart_station_id',
+        'arrive_station_id',
+        'transit_route_id',
     ];
 
-    public function startingPoint()
+    public function TransitRoutes()
+    {
+        return $this->belongsTo(TransitRoute::class);
+    }
+
+    public function depatureStation()
     {
         return $this->hasOne(Station::class);
     }
 
-    public function endingPoint()
+    public function arrivalStation()
     {
         return $this->hasOne(Station::class);
     }

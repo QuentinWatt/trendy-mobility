@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\Station;
+use App\Models\TransitRoute;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +19,11 @@ class SegmentFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'depart_station_id' => Station::factory()->create(),
+            'arrive_station_id' => Station::factory()->create(),
+            'distance' => (string) fake()->numberBetween(500, 35000),
+            'estimated_travel_time' => (string) fake()->numberBetween(5, 60),
+            'transit_route_id' => TransitRoute::factory()->create(),
         ];
     }
 }
