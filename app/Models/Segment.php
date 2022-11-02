@@ -23,13 +23,13 @@ class Segment extends Model
         return $this->belongsTo(TransitRoute::class);
     }
 
-    public function depatureStation()
+    public function departureStation()
     {
-        return $this->hasOne(Station::class);
+        return $this->hasOne(Station::class, 'id', 'depart_station_id');
     }
 
     public function arrivalStation()
     {
-        return $this->hasOne(Station::class);
+        return $this->hasOne(Station::class, 'id', 'arrive_station_id');
     }
 }
