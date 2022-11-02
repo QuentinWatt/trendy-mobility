@@ -4,12 +4,9 @@ namespace Tests\Feature;
 
 use Tests\TestCase;
 use App\Models\Station;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class StationFeatureTest extends TestCase
 {
-    use RefreshDatabase;
-
     public function test_returns_a_404_when_a_station_is_not_found()
     {
         $station = Station::factory()->create();
