@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -16,8 +17,11 @@ class StationFactory extends Factory
      */
     public function definition()
     {
+        $places = ['place', 'street', 'road', 'square'];
+        $names = [fake()->lastName(), fake()->firstName()];
+
         return [
-            'name' => fake()->name(),
+            'name' => Str::title($names[fake()->numberBetween(0, 1)] . ' ' . $places[fake()->numberBetween(0, 3)]),
             'latitude' => '-33.922214',
             'longitude' => '18.429004',
         ];
