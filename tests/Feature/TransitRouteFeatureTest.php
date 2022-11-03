@@ -58,21 +58,23 @@ class TransitRouteFeatureTest extends TestCase
             ->assertJsonFragment(
                 [
                     'segments' => [
-                        'id' => $segment->id,
-                        'depart_station' => [
-                            'id' => $departureStation->id,
-                            'name' => 'Test station A',
-                            'latitude' => '33',
-                            'longitude' => '18',
-                        ],
-                        'arrive_station' => [
-                            'id' => $arrivalStation->id,
-                            'name' => 'Test station B',
-                            'latitude' => '33',
-                            'longitude' => '18.2',
-                        ],
-                        'estimated_travel_time' => '24',
-                        'distance' => '11000',
+                        [
+                            'id' => $segment->id,
+                            'depart_station' => [
+                                'id' => $departureStation->id,
+                                'name' => 'Test station A',
+                                'latitude' => '33',
+                                'longitude' => '18',
+                            ],
+                            'arrive_station' => [
+                                'id' => $arrivalStation->id,
+                                'name' => 'Test station B',
+                                'latitude' => '33',
+                                'longitude' => '18.2',
+                            ],
+                            'distance' => '11000',
+                            'estimated_travel_time' => '24',
+                        ]
                     ],
                 ]
             );
