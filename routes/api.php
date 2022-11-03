@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\v1\ShowStationController;
+use App\Http\Controllers\Api\v1\ShowTransitRouteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,3 +22,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('/station/{station}', ShowStationController::class)
     ->name('stations.show');
+
+Route::get('/transit-route/{transitRoute}', ShowTransitRouteController::class)
+    ->name('transit-route.show');
